@@ -1,0 +1,33 @@
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+button {
+    width: 70px;
+    height: 70px;
+}
+
+.display {
+    padding: 10px;
+    background-color: black;
+    height: 50px;
+    color: white;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    word-wrap: break-word;
+    font-size: 24px;
+    overflow: hidden;
+}
+
+.container {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+
