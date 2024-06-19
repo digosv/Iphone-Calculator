@@ -1,28 +1,29 @@
 const display = document.querySelector(".display")
 const button = document.querySelectorAll("button")
-let lastImputOperator = false
+const ac = document.querySelector(".ac")
+let = lastInputWasOperator = false
 
 button.forEach(b => {
     b.addEventListener("click", function() {
         const value = b.textContent.trim();
-        if(value == "AC") {
+        let calc = ""
+
+        if(value === "AC" || value === "C") {
             display.textContent = ""
-            console.log(display.textContent)
-            lastImputOperator = false;
-        } else if(value == "=") {
-            let calc = display.textContent.replace(/x/g, "*")
-             let res = eval(calc)
-             display.textContent = res
-             console.log(display.textContent)
-             lastImputOperator = false;
-        }else { 
-            if((value === "*" || value === "/" || value === "+" || value === "-") && lastImputOperator) {
-                return;
-            }else {
-                display.textContent += b.textContent.trim()
-                lastImputOperator = (value === "*" || value === "/" || value === "+" || value === "-")
-                console.log(display.textContent)
-            }
+        }else if(value === "="){
+            display.textContent = eval(calc)
+        }else{
+            calc += value
+            display.textContent += calc
+        }
+
+        // se o display estiver vazio ele mostra AC, se houver algum numero mostre C 
+        if(display.textContent === ""){
+            ac.textContent = "AC"
+        }else{
+            ac.textContent = "C"
         }
     })
 })
+
+
