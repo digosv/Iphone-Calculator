@@ -28,13 +28,16 @@ button.forEach(b => {
             secondNumber = "";
             operator = "";
             resultDisplayed = false;
-        }else if(firstNumber && operator && display.textContent){
-            secondNumber = display.textContent;
-            display.textContent = calculate(firstNumber, secondNumber, operator);
-            firstNumber = display.textContent;
-            secondNumber = "";
-            operator = "";
-            resultDisplayed = true;
+        }else if(value == "="){
+            if(firstNumber && operator && display.textContent){
+                secondNumber = display.textContent;
+                display.textContent = calculate(firstNumber, secondNumber, operator);
+                firstNumber = display.textContent;
+                secondNumber = "";
+                operator = "";
+                resultDisplayed = true;
+            }
+           
         }else if(["+", "-", "*", "/"].includes(value)){
             if(firstNumber && operator && display.textContent){
                 secondNumber = display.textContent;
@@ -46,7 +49,11 @@ button.forEach(b => {
             }else {
                 firstNumber = display.textContent;
                 operator = value;
-                display.textContent = "";
+                resultDisplayed = true;
+            }
+        }else if(["+/-"].includes(value)){
+            if(display.textContent){
+                display.textContent = (parseFloat(display.textContent) * -1).toString();
             }
         }else {
             if(resultDisplayed){
