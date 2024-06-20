@@ -5,9 +5,15 @@ align-items: center;
 height: 100vh;
 }
 
+img{
+    position: relative;
+}
+
 button {
     width: 70px;
     height: 70px;
+    border-radius: 50%;
+    border-style: none;
 }
 
 .display {
@@ -19,7 +25,7 @@ button {
     justify-content: flex-end;
     align-items: center;
     word-wrap: break-word;
-    font-size: 24px;
+    font-size: 54px;
     overflow: hidden;
 }
 
@@ -28,6 +34,20 @@ button {
     display: flex;
     flex-direction: column;
     width: 300px;
+
 }
 
+#color-1 {
+    background-color: #323232;
+    color: white;
+}
 
+#symbols-1 {
+    background-color: #ff9f0a;
+    color: white;
+}
+
+#symbols-2 {
+    background-color: #a5a5a5;
+    color: black;
+}
